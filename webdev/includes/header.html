@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title><?php echo $page_title; ?></title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="header">
+		<h1>Your Website</h1>
+		<h2>catchy slogan...</h2>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="index.php">Home Page</a></li>
+			<li><a href="/pages/register.php">Register</a></li>
+			<li><a href="/pages/view_users.php">View User</a></li>
+			<li><a href="/pages/password.php">Change Password</a></li>
+			<li>
+				<?php
+					if(isset($_SESSION['user_id'])){
+						echo '<a href = "/pages/logout.php">Logout</a>';
+					}else{
+						echo '<a href = "/pages/login.php">Login</a>';
+					}
+				?>
+			</li>
+		</ul>
+	</div>
+	<div id="content"><!-- Start of the page-specific content. -->
+	<!-- script 9.1 -->
+
+<!-- if((isset($_COOKIE['user_id'])) && (basename($_SERVER['PHP_SELF']) != 'logout.php')){ -->
